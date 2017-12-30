@@ -1,0 +1,51 @@
+<html>
+	<head>
+		<title>猫抓老鼠</title>
+		<meta charset="UTF-8" />
+	</head>
+	<style>
+		#btn1{
+			position:absolute;
+			left:50%;
+			top:50%;
+			border-radius: 50%;
+			
+		}
+		#btn2{
+			position:absolute;
+			left:40%;
+			top:40%;
+			border-radius: 50%;
+		}
+	</style>
+	<body>
+	<button id="btn1">猫</button>
+	<button id="btn2" onmouseover="move();">老鼠</button>		
+	</body>
+	<script>
+		document.onmousemove=function(e){
+			btn1.style.left=e.clientX-10;
+			btn1.style.top=e.clientY-10;
+		}
+		var w=25,h=25;
+		function move(){
+			btn2.style.left=Math.random()*750;
+			btn2.style.top=Math.random()*750;
+			w+=25
+			btn1.style.width=w+"px";
+			h+=25
+			btn1.style.height=h+"px";
+			btn1.style.background="#"+parseInt(Math.random()*999999);
+			btn2.style.background="#"+parseInt(Math.random()*999999);
+		}
+		
+		
+		
+		
+		
+		
+		
+		
+	</script>
+	
+</html>
