@@ -1,0 +1,145 @@
+<html>
+	<head>
+		<meta charset='UTF-8' />
+		<title>计算器</title>
+	</head>
+	<style>
+		div {
+			width: 400px;
+			height: 650px;
+			background: red;
+		}
+		h1 {
+			text-align: center;
+		}
+		input {
+			width: 400px;
+			height: 50px;
+			font: 40px '楷书';
+		}
+		button {
+			width: 95px;
+			height: 100px;
+			font: 40px '楷书';
+		}
+		#es {
+			background: white;
+			width: 195px;
+		}
+		.num {
+			background: white;
+		}
+		#ss {
+			background: white;
+			width: 195px;
+		}
+		.other {
+			background: white;
+		}
+	</style>
+	<body>
+		<div>
+			<h1>计算器</h1>
+			<input type="text" id="t" />
+			<button class="num" onclick="t.value+=1">
+				1
+			</button>
+			<button class="num" onclick="t.value+=2">
+				2
+			</button>
+			<button class="num" onclick="t.value+=3">
+				3
+			</button>
+			<button class="other" onclick="t.value=''">
+				C
+			</button>
+			<button class="num" onclick="t.value+=4">
+				4
+			</button>
+			<button class="num" onclick="t.value+=5">
+				5
+			</button>
+			<button class="num" onclick="t.value+=6">
+				6
+			</button>
+			<button class="other" onclick="sub()">
+				-
+			</button>
+			<button class="num" onclick="t.value+=7">
+				7
+			</button>
+			<button class="num" onclick="t.value+=8">
+				8
+			</button>
+			<button class="num" onclick="t.value+=9">
+				9
+			</button>
+			<button class="other" onclick="mul()">
+				×
+			</button>
+			<button class="num" onclick="t.value+=0">
+				0
+			</button>
+			<button class="num" onclick="t.value+='00'">
+				00
+			</button>
+			<button class="other" onclick="t.value+='.'">
+				.
+			</button>
+			<button class="other" onclick="div()">
+				÷
+			</button>
+			<button id="es">
+				=
+			</button>
+			<button id="ss" onclick="add()">
+				+
+			</button>
+		</div>
+	</body>
+	<script>
+		var a = 0, b = 0, c = '+';
+		function add() {
+			a = t.value;
+			t.value = '';
+			c = "+";
+		}
+
+		function sub() {
+			a = t.value;
+			t.value = '';
+			c = "-";
+		}
+
+		function mul() {
+			a = t.value;
+			t.value = '';
+			c = "*";
+		}
+
+		function div() {
+			a = t.value;
+			t.value = '';
+			c = "/";
+		}
+
+
+		es.onclick = function() {
+			b = t.value;
+			switch(c) {
+				case'+':
+					t.value = parseInt(a) + parseInt(b)
+					break
+				case'-':
+					t.value = parseInt(a) - parseInt(b)
+					break
+				case'*':
+					t.value = parseInt(a) * parseInt(b)
+					break
+				case'/':
+					t.value = parseInt(a) / parseInt(b)
+					break
+			}
+		}
+	</script>
+</html>
